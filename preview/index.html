@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MmB2bTheme — Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ── Theme variables (from theme.json) ─────────────────────── */
+  :root {
+    --mm-color-primary:      #1a2e44;
+    --mm-color-primary-hover:#243d5c;
+    --mm-color-secondary:    #e8f0f7;
+    --mm-color-accent:       #e65c00;
+    --mm-color-text-base:    #1f2d3d;
+    --mm-color-text-muted:   #5a6a7a;
+    --mm-color-border:       #d0d9e2;
+    --mm-color-bg-light:     #f4f7fa;
+    --mm-header-top-bar-bg:  #0f1a27;
+    --mm-sidebar-width:      260px;
+    --mm-font:               'Inter', 'Segoe UI', system-ui, sans-serif;
+    --radius:                3px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--mm-font);
+    font-size: 14px;
+    color: var(--mm-color-text-base);
+    background: #fff;
+    line-height: 1.5;
+  }
+
+  .header-top {
+    background: var(--mm-header-top-bar-bg);
+    color: #fff;
+    font-size: 12px;
+    padding: 0 24px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header-top a { color: rgba(255,255,255,.75); text-decoration: none; }
+  .header-top a:hover { color: #fff; }
+
+  .header-main {
+    background: var(--mm-color-primary);
+    color: #fff;
+    height: 64px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--mm-color-accent);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .logo { font-size: 22px; font-weight: 700; letter-spacing: -.5px; }
+  .logo span { color: var(--mm-color-accent); }
+  .header-search {
+    flex: 1;
+    max-width: 440px;
+    margin: 0 32px;
+    display: flex;
+  }
+  .header-search input {
+    flex: 1;
+    padding: 8px 12px;
+    border: none;
+    border-radius: var(--radius) 0 0 var(--radius);
+    font-size: 13px;
+    font-family: var(--mm-font);
+    outline: none;
+  }
+  .header-search button {
+    background: var(--mm-color-accent);
+    color: #fff;
+    border: none;
+    padding: 0 14px;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  .header-actions { display: flex; gap: 20px; align-items: center; }
+  .header-actions a { color: rgba(255,255,255,.85); text-decoration: none; font-size: 13px; display: flex; align-items: center; gap: 5px; }
+  .header-actions a:hover { color: #fff; }
+  .cart-badge {
+    background: var(--mm-color-accent);
+    color: #fff;
+    border-radius: 10px;
+    padding: 1px 6px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  .page-body {
+    display: flex;
+    min-height: calc(100vh - 136px);
+  }
+
+  .sidebar {
+    width: var(--mm-sidebar-width);
+    border-right: 1px solid var(--mm-color-border);
+    background: #fff;
+    flex-shrink: 0;
+    padding: 16px 0;
+  }
+  .sidebar-title {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--mm-color-text-muted);
+    padding: 4px 16px 10px;
+  }
+  .sidebar-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px 16px;
+    font-size: 13px;
+    cursor: pointer;
+    color: var(--mm-color-text-base);
+    border-left: 3px solid transparent;
+  }
+  .sidebar-item:hover { background: var(--mm-color-bg-light); }
+  .sidebar-item.active {
+    background: var(--mm-color-secondary);
+    color: var(--mm-color-primary);
+    border-left-color: var(--mm-color-primary);
+    font-weight: 600;
+  }
+  .sidebar-count {
+    font-size: 11px;
+    color: var(--mm-color-text-muted);
+    background: var(--mm-color-bg-light);
+    border-radius: 10px;
+    padding: 1px 7px;
+  }
+  .sidebar-sub { padding-left: 16px; }
+  .sidebar-sub .sidebar-item { font-size: 12.5px; padding: 5px 16px; }
+
+  .main-content { flex: 1; padding: 24px; min-width: 0; }
+
+  .breadcrumb {
+    font-size: 12px;
+    color: var(--mm-color-text-muted);
+    margin-bottom: 16px;
+  }
+  .breadcrumb a { color: var(--mm-color-primary); text-decoration: none; }
+  .breadcrumb a:hover { text-decoration: underline; }
+  .breadcrumb span { margin: 0 5px; }
+
+  .listing-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--mm-color-border);
+  }
+  .listing-toolbar h1 { font-size: 18px; font-weight: 700; }
+  .listing-toolbar-right { display: flex; align-items: center; gap: 12px; }
+  .result-count { font-size: 13px; color: var(--mm-color-text-muted); }
+  .view-toggle { display: flex; gap: 2px; }
+  .view-btn {
+    background: var(--mm-color-bg-light);
+    border: 1px solid var(--mm-color-border);
+    padding: 5px 9px;
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--mm-color-text-muted);
+  }
+  .view-btn:first-child { border-radius: var(--radius) 0 0 var(--radius); }
+  .view-btn:last-child  { border-radius: 0 var(--radius) var(--radius) 0; }
+  .view-btn.active { background: var(--mm-color-primary); color: #fff; border-color: var(--mm-color-primary); }
+  select.sort-select {
+    border: 1px solid var(--mm-color-border);
+    border-radius: var(--radius);
+    padding: 5px 10px;
+    font-size: 13px;
+    font-family: var(--mm-font);
+    color: var(--mm-color-text-base);
+    background: #fff;
+    cursor: pointer;
+  }
+
+  .product-table { width: 100%; border-collapse: collapse; }
+  .product-table th {
+    text-align: left;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--mm-color-text-muted);
+    padding: 8px 12px;
+    border-bottom: 2px solid var(--mm-color-border);
+    background: var(--mm-color-bg-light);
+  }
+  .product-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--mm-color-border);
+    vertical-align: middle;
+  }
+  .product-table tr:hover td { background: var(--mm-color-bg-light); }
+  .product-table tr:nth-child(even) td { background: rgba(244,247,250,0.4); }
+  .product-table tr:nth-child(even):hover td { background: var(--mm-color-bg-light); }
+
+  .prod-img {
+    width: 48px; height: 48px;
+    background: var(--mm-color-secondary);
+    border-radius: var(--radius);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+  }
+  .prod-name { font-weight: 600; font-size: 13px; margin-bottom: 2px; }
+  .prod-sku  { font-size: 11px; color: var(--mm-color-text-muted); font-family: monospace; }
+  .stock-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  .stock-ok  { background: #e8f5e9; color: #2e7d32; }
+  .stock-low { background: #fff3e0; color: #f57c00; }
+  .stock-out { background: #ffebee; color: #c62828; }
+  .price     { font-size: 14px; font-weight: 700; color: var(--mm-color-primary); }
+  .price-old { font-size: 12px; color: var(--mm-color-text-muted); text-decoration: line-through; }
+  .qty-input {
+    width: 58px;
+    padding: 5px 8px;
+    border: 1px solid var(--mm-color-border);
+    border-radius: var(--radius);
+    font-size: 13px;
+    text-align: center;
+    font-family: var(--mm-font);
+  }
+  .btn-cart {
+    background: var(--mm-color-accent);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius);
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    font-family: var(--mm-font);
+  }
+  .btn-cart:hover { opacity: .9; }
+  .btn-primary {
+    background: var(--mm-color-primary);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius);
+    padding: 8px 18px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: var(--mm-font);
+  }
+  .btn-primary:hover { background: var(--mm-color-primary-hover); }
+  .btn-outline {
+    background: transparent;
+    color: var(--mm-color-primary);
+    border: 1px solid var(--mm-color-primary);
+    border-radius: var(--radius);
+    padding: 7px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: var(--mm-font);
+  }
+  .btn-outline:hover { background: var(--mm-color-secondary); }
+
+  .pagination {
+    display: flex; gap: 4px;
+    margin-top: 20px;
+    justify-content: center;
+  }
+  .page-btn {
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid var(--mm-color-border);
+    border-radius: var(--radius);
+    font-size: 13px; cursor: pointer;
+    color: var(--mm-color-text-base);
+  }
+  .page-btn.active { background: var(--mm-color-primary); color: #fff; border-color: var(--mm-color-primary); }
+  .page-btn:hover:not(.active) { background: var(--mm-color-bg-light); }
+
+  .info-banner {
+    background: var(--mm-color-secondary);
+    border: 1px solid var(--mm-color-border);
+    border-left: 4px solid var(--mm-color-primary);
+    border-radius: var(--radius);
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    font-size: 13px;
+    display: flex; align-items: center; gap: 10px;
+  }
+
+  .section-divider { margin: 40px 0 16px; padding-top: 16px; border-top: 1px solid var(--mm-color-border); }
+  .section-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--mm-color-text-muted); margin-bottom: 12px; }
+  .swatch-row { display: flex; gap: 10px; flex-wrap: wrap; }
+  .swatch { display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: 11px; color: var(--mm-color-text-muted); }
+  .swatch-color { width: 60px; height: 40px; border-radius: var(--radius); border: 1px solid rgba(0,0,0,.08); }
+
+  footer {
+    background: var(--mm-color-primary);
+    color: rgba(255,255,255,.6);
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+    margin-top: 40px;
+  }
+  footer strong { color: #fff; }
+
+  .preview-badge {
+    position: fixed;
+    bottom: 16px; right: 16px;
+    background: var(--mm-color-accent);
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 12px; font-weight: 700; letter-spacing: .05em;
+    box-shadow: 0 4px 12px rgba(0,0,0,.2);
+    z-index: 9999;
+  }
+</style>
+</head>
+<body>
+
+<div class="header-top">
+  <div>📞 +49 800 000 0000 &nbsp;|&nbsp; <a href="#">support@example.com</a></div>
+  <div><a href="#">My Account</a> &nbsp;|&nbsp; <a href="#">Order History</a> &nbsp;|&nbsp; <a href="#">Log out</a></div>
+</div>
+<header class="header-main">
+  <div class="logo">MM<span>.</span>B2B</div>
+  <div class="header-search">
+    <input type="text" placeholder="Search products, SKUs, categories…" value="hydraulic pump">
+    <button>🔍</button>
+  </div>
+  <div class="header-actions">
+    <a href="#">👤 Account</a>
+    <a href="#">🛒 Cart <span class="cart-badge">3</span></a>
+  </div>
+</header>
+
+<div class="page-body">
+  <aside class="sidebar">
+    <div class="sidebar-title">Categories</div>
+    <div class="sidebar-item">All Products <span class="sidebar-count">1,842</span></div>
+    <div class="sidebar-item active">Hydraulics <span class="sidebar-count">248</span></div>
+    <div class="sidebar-sub">
+      <div class="sidebar-item">Pumps <span class="sidebar-count">84</span></div>
+      <div class="sidebar-item">Cylinders <span class="sidebar-count">61</span></div>
+      <div class="sidebar-item">Valves <span class="sidebar-count">103</span></div>
+    </div>
+    <div class="sidebar-item">Pneumatics <span class="sidebar-count">319</span></div>
+    <div class="sidebar-item">Drive Technology <span class="sidebar-count">176</span></div>
+    <div class="sidebar-item">Seals &amp; Gaskets <span class="sidebar-count">421</span></div>
+    <div class="sidebar-item">Safety Equipment <span class="sidebar-count">94</span></div>
+    <div class="sidebar-item">Tools &amp; Accessories <span class="sidebar-count">584</span></div>
+    <div style="margin-top:20px">
+      <div class="sidebar-title">Filter</div>
+      <div style="padding:8px 16px">
+        <div style="font-size:12px;font-weight:600;margin-bottom:6px">Price range</div>
+        <div style="font-size:12px;color:var(--mm-color-text-muted)">€0 — €2,500</div>
+        <div style="margin:8px 0;height:4px;background:var(--mm-color-secondary);border-radius:2px;position:relative">
+          <div style="position:absolute;left:0;right:20%;height:100%;background:var(--mm-color-primary);border-radius:2px"></div>
+        </div>
+        <label style="display:flex;align-items:center;gap:8px;font-size:12px;margin:6px 0;cursor:pointer"><input type="checkbox" checked> In stock only</label>
+        <label style="display:flex;align-items:center;gap:8px;font-size:12px;margin:6px 0;cursor:pointer"><input type="checkbox"> New arrivals</label>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <div class="breadcrumb">
+      <a href="#">Home</a><span>›</span>
+      <a href="#">Hydraulics</a><span>›</span>
+      Pumps
+    </div>
+
+    <div class="info-banner">
+      <span>📋</span>
+      <span>Your account qualifies for <strong>volume discounts</strong> — prices shown include your negotiated rates.</span>
+    </div>
+
+    <div class="listing-toolbar">
+      <h1>Hydraulic Pumps &amp; Units</h1>
+      <div class="listing-toolbar-right">
+        <span class="result-count">84 products</span>
+        <div class="view-toggle">
+          <button class="view-btn active">☰</button>
+          <button class="view-btn">⊞</button>
+        </div>
+        <select class="sort-select">
+          <option>Sort: Name A–Z</option>
+          <option>Sort: Price ↑</option>
+          <option>Sort: Price ↓</option>
+        </select>
+      </div>
+    </div>
+
+    <table class="product-table">
+      <thead>
+        <tr>
+          <th style="width:56px"></th>
+          <th>Product</th>
+          <th>SKU</th>
+          <th>Stock</th>
+          <th>Unit price</th>
+          <th>Qty</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="prod-img">⚙️</div></td>
+          <td><div class="prod-name">Gear Pump GP-250 Series</div><div style="font-size:11px;color:var(--mm-color-text-muted)">Max. 250 bar · 28 cc/rev · ISO 4399</div></td>
+          <td><span class="prod-sku">GP-250-28CC</span></td>
+          <td><span class="stock-badge stock-ok">✓ 42 units</span></td>
+          <td><div class="price">€ 384.00</div><div class="price-old">€ 429.00</div></td>
+          <td><input class="qty-input" type="number" value="1" min="1"></td>
+          <td><button class="btn-cart">Add to cart</button></td>
+        </tr>
+        <tr>
+          <td><div class="prod-img">🔧</div></td>
+          <td><div class="prod-name">Axial Piston Pump APP-160</div><div style="font-size:11px;color:var(--mm-color-text-muted)">Max. 400 bar · variable displacement · SAE flange</div></td>
+          <td><span class="prod-sku">APP-160-VAR</span></td>
+          <td><span class="stock-badge stock-ok">✓ 7 units</span></td>
+          <td><div class="price">€ 1,249.00</div></td>
+          <td><input class="qty-input" type="number" value="1" min="1"></td>
+          <td><button class="btn-cart">Add to cart</button></td>
+        </tr>
+        <tr>
+          <td><div class="prod-img">⚡</div></td>
+          <td><div class="prod-name">Vane Pump VP-75 Compact</div><div style="font-size:11px;color:var(--mm-color-text-muted)">Max. 175 bar · low noise &lt; 68 dB(A)</div></td>
+          <td><span class="prod-sku">VP-075-FLG</span></td>
+          <td><span class="stock-badge stock-low">⚠ 2 left</span></td>
+          <td><div class="price">€ 218.50</div></td>
+          <td><input class="qty-input" type="number" value="1" min="1"></td>
+          <td><button class="btn-cart">Add to cart</button></td>
+        </tr>
+        <tr>
+          <td><div class="prod-img">🔩</div></td>
+          <td><div class="prod-name">Hydraulic Power Unit HPU-4kW</div><div style="font-size:11px;color:var(--mm-color-text-muted)">4 kW motor · 10 L tank · complete assembly</div></td>
+          <td><span class="prod-sku">HPU-4KW-10L</span></td>
+          <td><span class="stock-badge stock-out">✗ Out of stock</span></td>
+          <td><div class="price">€ 892.00</div></td>
+          <td><input class="qty-input" type="number" value="1" min="1" disabled style="opacity:.4"></td>
+          <td><button class="btn-outline">Notify me</button></td>
+        </tr>
+        <tr>
+          <td><div class="prod-img">⚙️</div></td>
+          <td><div class="prod-name">Gear Pump GP-100 Economy</div><div style="font-size:11px;color:var(--mm-color-text-muted)">Max. 200 bar · 11 cc/rev · DIN 24554</div></td>
+          <td><span class="prod-sku">GP-100-11CC</span></td>
+          <td><span class="stock-badge stock-ok">✓ 128 units</span></td>
+          <td><div class="price">€ 149.90</div></td>
+          <td><input class="qty-input" type="number" value="5" min="1"></td>
+          <td><button class="btn-cart">Add to cart</button></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="pagination">
+      <div class="page-btn">‹</div>
+      <div class="page-btn active">1</div>
+      <div class="page-btn">2</div>
+      <div class="page-btn">3</div>
+      <div class="page-btn">…</div>
+      <div class="page-btn">9</div>
+      <div class="page-btn">›</div>
+    </div>
+
+    <div class="section-divider"></div>
+    <div class="section-title">Color palette (from theme.json config fields)</div>
+    <div class="swatch-row">
+      <div class="swatch"><div class="swatch-color" style="background:#1a2e44"></div>Primary</div>
+      <div class="swatch"><div class="swatch-color" style="background:#243d5c"></div>Primary hover</div>
+      <div class="swatch"><div class="swatch-color" style="background:#e8f0f7"></div>Secondary</div>
+      <div class="swatch"><div class="swatch-color" style="background:#e65c00"></div>Accent</div>
+      <div class="swatch"><div class="swatch-color" style="background:#1f2d3d"></div>Text base</div>
+      <div class="swatch"><div class="swatch-color" style="background:#5a6a7a"></div>Text muted</div>
+      <div class="swatch"><div class="swatch-color" style="background:#d0d9e2"></div>Border</div>
+      <div class="swatch"><div class="swatch-color" style="background:#f4f7fa"></div>BG light</div>
+    </div>
+
+    <div style="margin-top:20px">
+      <div class="section-title">Buttons</div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+        <button class="btn-primary">Primary action</button>
+        <button class="btn-outline">Secondary action</button>
+        <button class="btn-cart">Add to cart</button>
+      </div>
+    </div>
+
+    <div style="margin-top:20px;padding-bottom:8px">
+      <div class="section-title">Typography — Inter, 14px base</div>
+      <h1 style="font-size:28px;font-weight:700;margin-bottom:4px">H1 — Industrial wholesale</h1>
+      <h2 style="font-size:22px;font-weight:600;margin-bottom:4px">H2 — Product category</h2>
+      <h3 style="font-size:17px;font-weight:600;margin-bottom:4px">H3 — Subcategory title</h3>
+      <p style="margin-bottom:4px">Body — Standard paragraph text at 14px / 1.5 line-height.</p>
+      <p style="font-size:13px;color:var(--mm-color-text-muted)">Muted — Supporting text, metadata, helper copy.</p>
+    </div>
+  </main>
+</div>
+
+<footer>
+  <strong>MmB2bTheme</strong> · Shopware 6.7 Theme Preview · Static design preview — not a live Shopware instance
+</footer>
+
+<div class="preview-badge">Theme Preview</div>
+
+</body>
+</html>
