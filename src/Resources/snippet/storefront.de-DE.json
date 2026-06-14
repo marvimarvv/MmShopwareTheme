@@ -1,0 +1,101 @@
+{
+    "sw-theme": {
+        "mmB2bTheme": {
+            "default": {
+                "label": "Allgemein",
+                "colors": {
+                    "label": "Farben",
+                    "brand": {
+                        "label": "Markenfarben",
+                        "mm-color-primary": {
+                            "label": "Primärfarbe",
+                            "helpText": "Hauptfarbe für Header, Buttons und Links"
+                        },
+                        "mm-color-primary-hover": {
+                            "label": "Primärfarbe (Hover)"
+                        },
+                        "mm-color-secondary": {
+                            "label": "Sekundär- / Hintergrundfarbe"
+                        },
+                        "mm-color-accent": {
+                            "label": "Akzentfarbe",
+                            "helpText": "Wird für CTAs und Hervorhebungen verwendet"
+                        }
+                    },
+                    "typography": {
+                        "label": "Textfarben",
+                        "mm-color-text-base": {
+                            "label": "Grundtextfarbe"
+                        },
+                        "mm-color-text-muted": {
+                            "label": "Gedämpfte Textfarbe"
+                        }
+                    },
+                    "layout": {
+                        "label": "Layoutfarben",
+                        "mm-color-border": {
+                            "label": "Rahmenfarbe"
+                        },
+                        "mm-color-bg-light": {
+                            "label": "Heller Hintergrund"
+                        }
+                    }
+                },
+                "typography": {
+                    "label": "Typografie",
+                    "fonts": {
+                        "label": "Schriften",
+                        "mm-font-family-base": {
+                            "label": "Schriftart"
+                        },
+                        "mm-font-size-base": {
+                            "label": "Basis-Schriftgröße",
+                            "helpText": "z. B. 14px oder 0.875rem"
+                        }
+                    }
+                },
+                "header": {
+                    "label": "Header",
+                    "contact": {
+                        "label": "Kontaktleiste",
+                        "mm-header-phone": {
+                            "label": "Telefonnummer",
+                            "helpText": "Wird in der oberen Header-Leiste angezeigt"
+                        },
+                        "mm-header-show-phone": {
+                            "label": "Telefonnummer anzeigen"
+                        },
+                        "mm-header-show-account": {
+                            "label": "Konto-Link anzeigen"
+                        }
+                    }
+                },
+                "catalog": {
+                    "label": "Katalog",
+                    "listing": {
+                        "label": "Produktliste",
+                        "mm-listing-default-view": {
+                            "label": "Standard-Ansicht",
+                            "helpText": "Liste = Tabellenzeilen, Kacheln = Produktkarten",
+                            "0": { "label": "Liste (empfohlen für B2B)" },
+                            "1": { "label": "Kachelansicht" }
+                        },
+                        "mm-listing-show-sku": {
+                            "label": "Artikelnummer anzeigen"
+                        },
+                        "mm-listing-show-stock": {
+                            "label": "Verfügbarkeit anzeigen"
+                        }
+                    },
+                    "navigation": {
+                        "label": "Navigation",
+                        "mm-sidebar-enabled": {
+                            "label": "Seitenleisten-Navigation aktivieren",
+                            "helpText": "Zeigt den Kategoriebaum als Sidebar auf Listingseiten"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

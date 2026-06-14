@@ -1,0 +1,19 @@
+# Composer
+/vendor/
+
+# Node
+/node_modules/
+
+# Build artifacts (rebuilt by bin/console theme:compile)
+# Keep the stub JS file; it is overwritten by the build process
+/src/Resources/app/storefront/dist/storefront/js/mm-b2b-theme/*.map
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

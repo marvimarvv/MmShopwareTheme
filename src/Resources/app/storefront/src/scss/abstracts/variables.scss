@@ -1,0 +1,53 @@
+// =============================================================================
+// abstracts/_variables.scss
+// Theme-specific SCSS variables not exposed in theme.json
+// Note: color/font vars from theme.json are already injected automatically.
+// =============================================================================
+@use 'sass:color';
+
+// -----------------------------------------------------------------------------
+// Header
+// -----------------------------------------------------------------------------
+$mm-header-top-bar-height:      36px;
+$mm-header-main-height:         64px;
+$mm-header-bg:                  $mm-color-primary;
+$mm-header-top-bar-bg:          color.adjust($mm-color-primary, $lightness: -8%);
+$mm-header-text-color:          #ffffff;
+$mm-header-border-bottom:       2px solid $mm-color-accent;
+
+// -----------------------------------------------------------------------------
+// Sidebar / Category navigation
+// -----------------------------------------------------------------------------
+$mm-sidebar-width:              260px;
+$mm-sidebar-bg:                 #ffffff;
+$mm-sidebar-border:             1px solid $mm-color-border;
+$mm-sidebar-item-padding:       0.5rem 1rem;
+$mm-sidebar-active-bg:          $mm-color-secondary;
+$mm-sidebar-active-color:       $mm-color-primary;
+$mm-sidebar-hover-bg:           $mm-color-bg-light;
+
+// -----------------------------------------------------------------------------
+// Product listing (list view — B2B default)
+// -----------------------------------------------------------------------------
+$mm-listing-row-height:         72px;
+$mm-listing-row-border:         1px solid $mm-color-border;
+$mm-listing-row-hover-bg:       $mm-color-bg-light;
+$mm-listing-sku-color:          $mm-color-text-muted;
+$mm-listing-sku-font-size:      0.75rem;
+$mm-listing-stock-ok-color:     #2e7d32;
+$mm-listing-stock-low-color:    #f57c00;
+$mm-listing-stock-out-color:    #c62828;
+
+// -----------------------------------------------------------------------------
+// Product card (grid view — secondary)
+// -----------------------------------------------------------------------------
+$mm-card-border:                1px solid $mm-color-border;
+$mm-card-shadow:                0 1px 3px rgba(0, 0, 0, 0.08);
+$mm-card-shadow-hover:          0 4px 12px rgba(0, 0, 0, 0.12);
+
+// -----------------------------------------------------------------------------
+// Z-index scale
+// -----------------------------------------------------------------------------
+$mm-z-header:           100;
+$mm-z-sidebar:          50;
+$mm-z-overlay:          200;

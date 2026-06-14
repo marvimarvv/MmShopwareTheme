@@ -1,0 +1,22 @@
+// =============================================================================
+// base.scss
+// Loaded AFTER @Storefront — add custom component styles here.
+// @Storefront variables and mixins are available.
+// =============================================================================
+
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+@import 'layout/header';
+@import 'layout/navigation';
+@import 'layout/sidebar';
+
+@import 'components/product-listing';
+@import 'components/product-card';
+@import 'components/product-detail';
+@import 'components/search';
+@import 'components/cart';
+@import 'components/account';
+
+@import 'utilities/typography';
+@import 'utilities/spacing';

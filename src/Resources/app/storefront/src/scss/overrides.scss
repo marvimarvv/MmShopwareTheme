@@ -1,0 +1,75 @@
+// =============================================================================
+// overrides.scss
+// Loaded BEFORE @Storefront — override Bootstrap & Shopware SCSS variables here.
+// Do NOT put component styles here, only variable/function overrides.
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// Bootstrap grid & layout overrides
+// -----------------------------------------------------------------------------
+$grid-gutter-width:     24px;
+$border-radius:         3px;
+$border-radius-sm:      2px;
+$border-radius-lg:      4px;
+
+// Tighten up spacing for dense B2B layouts
+$spacer:                1rem;
+
+// -----------------------------------------------------------------------------
+// Typography overrides
+// -----------------------------------------------------------------------------
+// $mm-font-family-base and $mm-font-size-base are injected from theme.json config
+$font-family-base:      $mm-font-family-base;
+$font-size-base:        $mm-font-size-base;
+$font-size-sm:          0.8125rem; // 13px at 16px root
+$line-height-base:      1.5;
+$headings-font-weight:  600;
+$headings-line-height:  1.25;
+
+// -----------------------------------------------------------------------------
+// Color overrides (mapped from theme.json config fields)
+// $mm-color-primary etc. are auto-injected as SCSS vars from theme.json
+// -----------------------------------------------------------------------------
+$primary:               $mm-color-primary;
+$secondary:             $mm-color-secondary;
+$body-color:            $mm-color-text-base;
+$border-color:          $mm-color-border;
+$light:                 $mm-color-bg-light;
+
+// Link colors
+$link-color:            $mm-color-primary;
+$link-hover-color:      $mm-color-primary-hover;
+$link-decoration:       none;
+$link-hover-decoration: underline;
+
+// -----------------------------------------------------------------------------
+// Button overrides
+// -----------------------------------------------------------------------------
+$btn-border-radius:     $border-radius;
+$btn-font-weight:       600;
+$btn-font-size:         0.875rem;
+$btn-padding-y:         0.5rem;
+$btn-padding-x:         1rem;
+
+// -----------------------------------------------------------------------------
+// Form overrides
+// -----------------------------------------------------------------------------
+$input-border-color:        $mm-color-border;
+$input-focus-border-color:  $mm-color-primary;
+$input-font-size:           $font-size-base;
+$input-border-radius:       $border-radius;
+
+// -----------------------------------------------------------------------------
+// Table overrides (important for B2B product list view)
+// -----------------------------------------------------------------------------
+$table-cell-padding-y:      0.5rem;
+$table-cell-padding-x:      0.75rem;
+$table-striped-bg:          rgba($mm-color-bg-light, 0.6);
+$table-border-color:        $mm-color-border;
+
+// -----------------------------------------------------------------------------
+// Card overrides
+// -----------------------------------------------------------------------------
+$card-border-color:         $mm-color-border;
+$card-border-radius:        $border-radius;
+$card-cap-bg:               $mm-color-bg-light;

@@ -1,0 +1,101 @@
+{
+    "sw-theme": {
+        "mmB2bTheme": {
+            "default": {
+                "label": "General",
+                "colors": {
+                    "label": "Colors",
+                    "brand": {
+                        "label": "Brand Colors",
+                        "mm-color-primary": {
+                            "label": "Primary Color",
+                            "helpText": "Main brand color used for header, buttons and links"
+                        },
+                        "mm-color-primary-hover": {
+                            "label": "Primary Hover Color"
+                        },
+                        "mm-color-secondary": {
+                            "label": "Secondary / Background Color"
+                        },
+                        "mm-color-accent": {
+                            "label": "Accent / Highlight Color",
+                            "helpText": "Used for CTAs and highlights"
+                        }
+                    },
+                    "typography": {
+                        "label": "Text Colors",
+                        "mm-color-text-base": {
+                            "label": "Body Text Color"
+                        },
+                        "mm-color-text-muted": {
+                            "label": "Muted / Secondary Text Color"
+                        }
+                    },
+                    "layout": {
+                        "label": "Layout Colors",
+                        "mm-color-border": {
+                            "label": "Border Color"
+                        },
+                        "mm-color-bg-light": {
+                            "label": "Light Background Color"
+                        }
+                    }
+                },
+                "typography": {
+                    "label": "Typography",
+                    "fonts": {
+                        "label": "Fonts",
+                        "mm-font-family-base": {
+                            "label": "Font Family"
+                        },
+                        "mm-font-size-base": {
+                            "label": "Base Font Size",
+                            "helpText": "e.g. 14px or 0.875rem"
+                        }
+                    }
+                },
+                "header": {
+                    "label": "Header",
+                    "contact": {
+                        "label": "Contact Bar",
+                        "mm-header-phone": {
+                            "label": "Phone Number",
+                            "helpText": "Displayed in the header top bar"
+                        },
+                        "mm-header-show-phone": {
+                            "label": "Show Phone Number"
+                        },
+                        "mm-header-show-account": {
+                            "label": "Show Account Link"
+                        }
+                    }
+                },
+                "catalog": {
+                    "label": "Catalog",
+                    "listing": {
+                        "label": "Product Listing",
+                        "mm-listing-default-view": {
+                            "label": "Default View",
+                            "helpText": "list = table-style rows, grid = cards",
+                            "0": { "label": "List (recommended for B2B)" },
+                            "1": { "label": "Grid" }
+                        },
+                        "mm-listing-show-sku": {
+                            "label": "Show SKU / Article Number"
+                        },
+                        "mm-listing-show-stock": {
+                            "label": "Show Stock Availability"
+                        }
+                    },
+                    "navigation": {
+                        "label": "Navigation",
+                        "mm-sidebar-enabled": {
+                            "label": "Enable Sidebar Navigation",
+                            "helpText": "Shows category tree in a sidebar on listing pages"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,170 @@
+{
+    "name": "MmB2bTheme",
+    "author": "MM",
+    "description": {
+        "en-GB": "Professional B2B and Industrial Wholesale Theme",
+        "de-DE": "Professionelles B2B- und Industrie-Theme"
+    },
+    "views": [
+        "@Storefront",
+        "@Plugins",
+        "@MmB2bTheme"
+    ],
+    "previewMedia": "app/storefront/src/assets/images/theme-preview.jpg",
+    "style": [
+        "app/storefront/src/scss/overrides.scss",
+        "@Storefront",
+        "app/storefront/src/scss/base.scss"
+    ],
+    "script": [
+        "@Storefront",
+        "@Plugins",
+        "app/storefront/dist/storefront/js/mm-b2b-theme/mm-b2b-theme.js"
+    ],
+    "asset": [
+        "@Storefront",
+        "app/storefront/src/assets"
+    ],
+    "config": {
+        "fields": {
+
+            "mm-color-primary": {
+                "type": "color",
+                "value": "#1a2e44",
+                "editable": true,
+                "block": "colors",
+                "section": "brand"
+            },
+            "mm-color-primary-hover": {
+                "type": "color",
+                "value": "#243d5c",
+                "editable": true,
+                "block": "colors",
+                "section": "brand"
+            },
+            "mm-color-secondary": {
+                "type": "color",
+                "value": "#e8f0f7",
+                "editable": true,
+                "block": "colors",
+                "section": "brand"
+            },
+            "mm-color-accent": {
+                "type": "color",
+                "value": "#e65c00",
+                "editable": true,
+                "block": "colors",
+                "section": "brand"
+            },
+            "mm-color-text-base": {
+                "type": "color",
+                "value": "#1f2d3d",
+                "editable": true,
+                "block": "colors",
+                "section": "typography"
+            },
+            "mm-color-text-muted": {
+                "type": "color",
+                "value": "#5a6a7a",
+                "editable": true,
+                "block": "colors",
+                "section": "typography"
+            },
+            "mm-color-border": {
+                "type": "color",
+                "value": "#d0d9e2",
+                "editable": true,
+                "block": "colors",
+                "section": "layout"
+            },
+            "mm-color-bg-light": {
+                "type": "color",
+                "value": "#f4f7fa",
+                "editable": true,
+                "block": "colors",
+                "section": "layout"
+            },
+
+            "mm-font-family-base": {
+                "type": "fontFamily",
+                "value": "'Inter', 'Segoe UI', system-ui, sans-serif",
+                "editable": true,
+                "block": "typography",
+                "section": "fonts"
+            },
+            "mm-font-size-base": {
+                "type": "text",
+                "value": "14px",
+                "editable": true,
+                "block": "typography",
+                "section": "fonts"
+            },
+
+            "mm-header-phone": {
+                "type": "text",
+                "value": "",
+                "editable": true,
+                "scss": false,
+                "block": "header",
+                "section": "contact"
+            },
+            "mm-header-show-phone": {
+                "type": "switch",
+                "value": true,
+                "editable": true,
+                "scss": false,
+                "block": "header",
+                "section": "contact"
+            },
+            "mm-header-show-account": {
+                "type": "switch",
+                "value": true,
+                "editable": true,
+                "scss": false,
+                "block": "header",
+                "section": "contact"
+            },
+
+            "mm-listing-default-view": {
+                "type": "text",
+                "value": "list",
+                "editable": true,
+                "scss": false,
+                "block": "catalog",
+                "section": "listing",
+                "custom": {
+                    "componentName": "sw-single-select",
+                    "options": [
+                        { "value": "list" },
+                        { "value": "grid" }
+                    ]
+                }
+            },
+            "mm-listing-show-sku": {
+                "type": "switch",
+                "value": true,
+                "editable": true,
+                "scss": false,
+                "block": "catalog",
+                "section": "listing"
+            },
+            "mm-listing-show-stock": {
+                "type": "switch",
+                "value": true,
+                "editable": true,
+                "scss": false,
+                "block": "catalog",
+                "section": "listing"
+            },
+
+            "mm-sidebar-enabled": {
+                "type": "switch",
+                "value": true,
+                "editable": true,
+                "scss": false,
+                "block": "catalog",
+                "section": "navigation"
+            }
+        }
+    }
+}
